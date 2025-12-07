@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smash Squad Academy</title>
+
+<style>
+:root {
+    --primary-color: #004d26;  /* Very dark green for headings and buttons */
+    --background-color: #f5f5f5; /* Keep the light background */
+    --text-color: #333;           /* Keep normal text color */
+    --light-red: #fddcdc;
+    --form-bg: #ffffff;
+    --input-border: #ccc;
+}
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: var(--background-color);
+        color: var(--text-color);
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px 0;
+    }
+
+h2 {
+    color: var(--primary-color);
+    margin-top: 40px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+}
+    p {
+        line-height: 1.6;
+    }
+
+    .logo {
+        width: 180px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .section {
+        margin-top: 20px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .person-box {
+        background: var(--form-bg);
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .person-box img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .person-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .pricing-box {
+        background: var(--form-bg);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .pricing-header {
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    table th, table td {
+        border: 1px solid #ccc;
+        padding: 12px 10px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    table th {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    table td.price {
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+
+    .payment-box {
+        background-color: var(--light-red);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    /* Booking Form */
+    .booking-form {
+        background: var(--form-bg);
+        padding: 25px;
+        border-radius: 10px;
+        margin-top: 30px;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .booking-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .booking-form label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid var(--input-border);
+        border-radius: 6px;
+        font-size: 14px;
+        background: #fff;
+    }
+
+.booking-form button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.booking-form button:hover {
+    background-color: #00331a; /* Slightly darker green on hover */
+}
+    @media (max-width: 600px) {
+        .person-box img {
+            height: 150px;
+        }
+
+        table th, table td {
+            font-size: 14px;
+            padding: 8px 6px;
+        }
+    }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LOGO -->
+    <img src="C:\Users\SAKA _01\Downloads\Smash squad academy logo 2.jpeg" alt="Academy Logo" class="logo">
+
+    <!-- INTRODUCTION -->
+    <div class="section">
+        <h2>About Smash Squad Academy</h2>
+        <p>
+            Welcome to Smash Squad Academy. Malawi’s leading tennis development program, 
+            committed to building strong fundamentals, discipline, competitive readiness, 
+            and a passion for the sport. We train players of all ages, from beginners to 
+            high performance competitors.
+
+          <h2>#ELEVATE_YOUR_GAME</h2>
+        </p>
+    </div>
+
+    <!-- COACHES SECTION -->
+    <h2>These Are Our Coaches</h2>
+    <div class="grid">
+        <div class="person-box">
+            <img src="images/coach_brenda.jpg" alt="Coach Brenda">
+            <p><strong>Coach Brenda</strong></p>
+        </div>
+        <div class="person-box">
+            <img src="images/coach_aaron.jpg" alt="Coach Aaron">
+            <p><strong>Coach Aaron</strong></p>
+        </div>
+        <div class="person-box">
+            <img src="C:\Users\SAKA _01\Downloads\coach-gift.jpeg" alt="Coach Gift">
+            <p><strong>Coach Gift</strong></p>
+        </div>
+        <div class="person-box">
+            <img src="images/coach_tanaka.jpg" alt="Coach Tanaka">
+            <p><strong>Coach Tanaka</strong></p>
+        </div>
+        <div class="person-box">
+            <img src="C:\Users\SAKA _01\Downloads\coach-lusekelo (2).jpeg" alt="Coach Lusekelo">
+            <p><strong>Coach Lusekelo</strong></p>
+        </div>
+        <div class="person-box">
+            <img src="C:\Users\SAKA _01\Downloads\coach-brian.jpeg" alt="Coach Brian">
+            <p><strong>Coach Brian</strong></p>
+        </div>
+    </div>
+
+    <!-- PLAYERS SECTION -->
+    <h2>These Are Some of the Players We Have</h2>
+    <div class="grid">
+        <div class="person-box">
+            <img src="images/joshua_somanje.jpg" alt="Joshua Somanje">
+            <p><strong>Joshua Somanje</strong></p>
+        </div>
+        <div class="person-box">
+            <img src="C:\Users\SAKA _01\Downloads\wonderful-kayira.jpeg" alt="Wonderful Kayira">
+            <p><strong>Wonderful Kayira</strong></p>
+        </div>
+        <div class="person-box">
+            <img src="C:\Users\SAKA _01\Downloads\kelsiegh-stewart.jpeg" alt="Kelsiegh Stewart">
+            <p><strong>Kelsiegh Stewart</strong></p>
+        </div>
+        <div class="person-box">
+            <img src="C:\Users\SAKA _01\Downloads\maise-stewart.jpeg" alt="Maise Stewart">
+            <p><strong>Maise Stewart</strong></p>
+        </div>
+    </div>
+
+    <!-- PRICING SECTION -->
+    <h2>Training Packages & Pricing</h2>
+    <div class="pricing-box">
+        <p class="pricing-header">SMASH SQUAD TRAINING PRICING</p>
+        <p style="text-align:center;">
+            Call or W/A: <strong>+265 991 339 144</strong><br>
+            Email: <strong>admin@smashsquad-mw.com</strong>
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Package</th>
+                    <th>Details</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Daily Package</td>
+                    <td>
+                        <ul>
+                            <li>1-on-1 Coaching (1×/week for 1.5 hours)</li>
+                            <li>Personalized Training Plan</li>
+                            <li>Available for beginners and social players (all ages)</li>
+                        </ul>
+                    </td>
+                    <td class="price">MK 17,000 /day</td>
+                </tr>
+                <tr>
+                    <td>Transformation Package</td>
+                    <td>
+                        <ul>
+                            <li>1-on-1 Coaching (2×/week)</li>
+                            <li>Group sessions (1×/week)</li>
+                            <li>Fitness & Progress Tracking</li>
+                            <li>Available for beginners, intermediate, and social players (all ages)</li>
+                        </ul>
+                    </td>
+                    <td class="price">MK 45,000 /week</td>
+                </tr>
+                <tr>
+                    <td>High Performance Package</td>
+                    <td>
+                        <ul>
+                            <li>Unlimited Coaching Sessions (4–6×/week)</li>
+                            <li>Group and individual coaching</li>
+                            <li>Training on singles and doubles play</li>
+                            <li>Registration with affiliate South Africa HPT Club</li>
+                            <li>Opportunities to travel for national & regional tournaments representing SSA</li>
+                            <li>Available for competitive driven players (8–18 years)</li>
+                        </ul>
+                    </td>
+                    <td class="price">MK 50,000 /week</td>
+                </tr>
+                <tr>
+                    <td>Add-Ons (per hour)</td>
+                    <td>
+                        <ul>
+                            <li>Hitting Only 1-on-1 — MK 10,000</li>
+                            <li>Corrective Coaching — MK 5,000</li>
+                            <li>Group training social — MK 7,000</li>
+                            <li>School group training (10 kids max) — MK 6,000</li>
+                        </ul>
+                    </td>
+                    <td class="price">Varies</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="payment-box">
+            💳 <strong>Payment Method:</strong> <br>
+            Bank: FDH BANK | Branch: UMOYO BRANCH | Account Number: 1850105766243 <br><br>
+            ⚠️ All payments strictly in advance to secure training slots ⚠️
+        </div>
+    </div>
+
+    <!-- BOOKING FORM SECTION -->
+    <div class="booking-form">
+        <h2>Request a Booking</h2>
+        <p>Use the form below to request your preferred service, date, and coach. We will contact you shortly to confirm the appointment.</p>
+        <form>
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+265 7xx xxx xxx" required>
+
+            <label for="service">Select a Service *</label>
+            <select id="service" name="service" required>
+                <option value="">-- Select a Service --</option>
+                <option value="daily">Daily Package</option>
+                <option value="transformation">Transformation Package</option>
+                <option value="high-performance">High Performance Package</option>
+                <option value="add-ons">Add-Ons</option>
+            </select>
+
+            <label for="skill">Skill Level</label>
+            <select id="skill" name="skill">
+                <option value="">-- Select Skill Level --</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+
+            <label for="coach">Preferred Coach</label>
+            <select id="coach" name="coach">
+                <option value="">-- Select Coach --</option>
+                <option value="brenda">Coach Brenda</option>
+                <option value="aaron">Coach Aaron</option>
+                <option value="gift">Coach Gift</option>
+                <option value="tanaka">Coach Tanaka</option>
+                <option value="lusekelo">Coach Lusekelo</option>
+                <option value="brian">Coach Brian</option>
+            </select>
+
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date">
+
+            <label for="time">Preferred Time</label>
+            <input type="time" id="time" name="time">
+
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message" placeholder="Any special requests or notes..."></textarea>
+
+            <button type="submit">Request Booking</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

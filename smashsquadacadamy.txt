@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Smash Squad Acadamy— Booking Form</title>
+
+<style>
+  :root{
+    --bg: #ffffff;
+    --text: #000000;
+    --border: #d9d9d9;
+    --shadow: 0 8px 24px rgba(0,0,0,0.15);
+    --radius: 18px;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto;
+  }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f2f2f2;
+    padding:20px;
+  }
+
+  .modal{
+    background:var(--bg);
+    width:100%;
+    max-width:420px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:20px;
+    position:relative;
+  }
+
+  .header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .logo{
+    width:55px;
+    height:55px;
+    background:#000;
+    color:#fff;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:700;
+    font-size:20px;
+  }
+
+  .brand{
+    margin-left:10px;
+  }
+
+  .brand-title{
+    font-size:15px;
+    font-weight:600;
+  }
+
+  .brand-sub{
+    font-size:12px;
+    color:#555;
+  }
+
+  .close-btn{
+    border:none;
+    background:transparent;
+    font-size:20px;
+    cursor:pointer;
+  }
+
+  h2{
+    font-size:18px;
+    margin-top:15px;
+  }
+
+  .subtext{
+    font-size:13px;
+    color:#555;
+    margin-bottom:15px;
+  }
+
+  form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .full{
+    grid-column:1 / -1;
+  }
+
+  label{
+    font-size:12px;
+    margin-bottom:4px;
+    display:block;
+    color:#000;
+  }
+
+  input, select, textarea{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    font-size:14px;
+    outline:none;
+    transition:0.2s border;
+    background:white;
+  }
+
+  input:focus, select:focus, textarea:focus{
+    border-color:#000;
+  }
+
+  textarea{
+    min-height:80px;
+    resize:vertical;
+  }
+
+  button.submit{
+    grid-column:1 / -1;
+    background:#000;
+    color:#fff;
+    padding:14px;
+    border-radius:12px;
+    border:none;
+    font-size:15px;
+    cursor:pointer;
+    margin-top:5px;
+  }
+
+  .caption{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    background:#000;
+    color:#fff;
+    font-size:13px;
+    padding:7px 10px;
+    border-radius:8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="modal">
+  
+  <!-- HEADER -->
+  <div class="header">
+    <div style="display:flex; align-items:center;">
+      <div class="logo">
+  <img src="images/Smash squad academy logo.jpg" alt="Smash Squad Academy Logo">
+</div>
+      <div class="brand">
+        <div class="brand-title">Smach Squad Academy</div>
+        <div class="brand-sub">Professional Coaching & Court Bookings</div>
+      </div>
+    </div>
+    <button class="close-btn">✕</button>
+  </div>
+
+  <!-- TITLE -->
+  <h2>Request a Booking</h2>
+  <div class="subtext">Fill in the form below. We'll contact you to confirm.</div>
+
+  <!-- FORM -->
+  <form **action="submit_booking.php" method="POST"**>
+    <div class="full">
+      <label>Full Name *</label>
+      <input type="text" placeholder="Your full name" required>
+    </div>
+
+    <div>
+      <label>Email *</label>
+      <input type="email" placeholder="example@mail.com" required>
+    </div>
+
+    <div>
+      <label>Phone Number *</label>
+      <input type="tel" placeholder="+265 7xx xxx xxx" required>
+    </div>
+
+    <div class="full">
+      <label>Select a Service *</label>
+      <select required>
+        <option value="">-- Select a Service --</option>
+        <option>Private Lesson (1-on-1)</option>
+        <option>Group Lesson</option>
+        <option>Court Hire</option>
+        <option>Membership</option>
+        <option>Coaching Camp</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Skill Level</label>
+      <select>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+        <option>All Levels</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Preferred Coach</label>
+      <select>
+        <option>C.Brenda (Head Coach)</option>
+        <option>C.Aaron(Assistant Coach</option>
+        <option>C.Gift</option>
+        <option>C.Tanaka</option>
+        <option>C.Lusekelo</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Preferred Date</label>
+      <input type="date">
+    </div>
+
+    <div>
+      <label>Preferred Time</label>
+      <input type="time">
+    </div>
+
+    <div class="full">
+      <label>Message (Optional)</label>
+      <textarea placeholder="Any special requests or notes..."></textarea>
+    </div>
+
+    <button class="submit">Request Booking</button>
+  </form>
+
+  <!-- CAPTION -->
+  <div class="caption">Every click elevates your game</div>
+</div>
+
+</body>
+</html>
