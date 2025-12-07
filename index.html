@@ -1,432 +1,471 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Smash Squad Academy — Pricing & Booking</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smash Squad Academy — Pricing & Booking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<style>
-  /* --- Global Variables & Reset --- */
-  :root{
-    --bg: #ffffff;
-    --text: #1a1a1a;
-    --primary: #004d40; /* Dark Teal/Green for actions */
-    --border: #d9d9d9;
-    --shadow: 0 12px 30px rgba(0,0,0,0.1);
-    --radius: 18px;
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  }
+  <style>
+    /* --- Global Variables & Reset --- */
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --primary: #004d40;
+      /* Dark Teal/Green for actions */
+      --border: #d9d9d9;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      --radius: 18px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
 
-  body{
-    margin:0;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    background:#f4f7f6;
-    padding:40px 20px;
-  }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: #f4f7f6;
+      padding: 40px 20px;
+    }
 
-  /* --- Main Content Container --- */
-  .content-container{
-    background:var(--bg);
-    width:100%;
-    max-width:700px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:30px;
-    position:relative;
-  }
-  
-  /* --- Header & Branding --- */
-  .header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom: 25px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 20px;
-  }
-  .logo{
-    width:60px;
-    height:60px;
-    border-radius:12px;
-    overflow: hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-  }
-  .logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .brand{
-    margin-left:15px;
-  }
-  .brand-title{
-    font-size:18px;
-    font-weight:700;
-    color: var(--primary);
-  }
-  .brand-sub{
-    font-size:13px;
-    color:#666;
-  }
-  .close-btn{
-    border:none;
-    background:transparent;
-    font-size:24px;
-    color: #999;
-    cursor:pointer;
-    padding: 5px;
-    transition: color 0.2s;
-  }
-  
-  /* --- General Typography --- */
-  h2{
-    font-size:22px;
-    margin-top:25px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    color: var(--text);
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 5px;
-  }
-  h3 {
-    font-size: 18px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: var(--text);
-  }
-  .subtext{
-    font-size:14px;
-    color:#777;
-    margin-bottom:25px;
-  }
+    /* --- Main Content Container --- */
+    .content-container {
+      background: var(--bg);
+      width: 100%;
+      max-width: 700px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      position: relative;
+    }
 
-  /* --- Form Styling --- */
-  form{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-    margin-bottom: 40px;
-  }
-  .field-group {
-    display: flex;
-    flex-direction: column;
-  }
-  .full{
-    grid-column:1 / -1;
-  }
-  label{
-    font-size:12px;
-    margin-bottom:6px;
-    display:block;
-    color: var(--text);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  input, select, textarea{
-    width:100%;
-    padding:14px;
-    border-radius:12px;
-    border:1px solid var(--border);
-    font-size:15px;
-    outline:none;
-    transition:0.2s border, 0.2s box-shadow;
-    background:white;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  input:focus, select:focus, textarea:focus{
-    border-color:var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.1);
-  }
-  select {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 12px;
-    padding-right: 30px;
-  }
-  textarea{
-    min-height:90px;
-    resize:vertical;
-  }
-  button.submit{
-    grid-column:1 / -1;
-    background:var(--primary);
-    color:#fff;
-    padding:16px;
-    border-radius:14px;
-    border:none;
-    font-size:16px;
-    font-weight: 700;
-    cursor:pointer;
-    margin-top:10px;
-    transition: background-color 0.2s, transform 0.1s;
-  }
-  button.submit:hover{
-    background-color: #006655;
-    transform: translateY(-1px);
-  }
+    /* --- Header & Branding --- */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
 
-  /* --- Pricing Table Styling --- */
-  .pricing-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-  }
-  .pricing-table th, .pricing-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  .pricing-table th {
-    background-color: var(--primary);
-    color: white;
-    font-weight: 600;
-    font-size: 15px;
-  }
-  .pricing-table tr:hover {
-    background-color: #f7f7f7;
-  }
-  .price-cell {
-    font-weight: 700;
-    color: var(--primary);
-    white-space: nowrap;
-  }
-  .package-details ul {
-    list-style: disc;
-    padding-left: 20px;
-    margin: 0;
-    font-size: 14px;
-  }
-  .package-details li {
-    margin-bottom: 4px;
-  }
-  
-  /* --- Contact and Payment --- */
-  .contact-info, .payment-method {
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 15px;
-  }
-  .contact-info {
-    background-color: #e6f7ff;
-    border: 1px solid #b3e0ff;
-  }
-  .payment-method {
-    background-color: #fff0f0;
-    border: 1px solid #ffcccc;
-  }
-  .payment-method strong {
-    color: #cc0000;
-    font-weight: 700;
-  }
-  .caption{
-    display: block;
-    text-align: right;
-    margin-top: 20px;
-    color:#555;
-    font-size:12px;
-    font-style: italic;
-  }
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  @media (max-width: 600px) {
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand {
+      margin-left: 15px;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .brand-sub {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .close-btn {
+      border: none;
+      background: transparent;
+      font-size: 24px;
+      color: #999;
+      cursor: pointer;
+      padding: 5px;
+      transition: color 0.2s;
+    }
+
+    /* --- General Typography --- */
+    h2 {
+      font-size: 22px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: var(--text);
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 5px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .subtext {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    /* --- Form Styling --- */
     form {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 40px;
     }
-    .full {
-      grid-column: 1 / 1;
-    }
-  }
 
-</style>
+    .field-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 12px;
+      margin-bottom: 6px;
+      display: block;
+      color: var(--text);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 15px;
+      outline: none;
+      transition: 0.2s border, 0.2s box-shadow;
+      background: white;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.1);
+    }
+
+    select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 12px;
+      padding-right: 30px;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    button.submit {
+      grid-column: 1 / -1;
+      background: var(--primary);
+      color: #fff;
+      padding: 16px;
+      border-radius: 14px;
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    button.submit:hover {
+      background-color: #006655;
+      transform: translateY(-1px);
+    }
+
+    /* --- Pricing Table Styling --- */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .pricing-table th {
+      background-color: var(--primary);
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .pricing-table tr:hover {
+      background-color: #f7f7f7;
+    }
+
+    .price-cell {
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .package-details ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .package-details li {
+      margin-bottom: 4px;
+    }
+
+    /* --- Contact and Payment --- */
+    .contact-info,
+    .payment-method {
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+
+    .contact-info {
+      background-color: #e6f7ff;
+      border: 1px solid #b3e0ff;
+    }
+
+    .payment-method {
+      background-color: #fff0f0;
+      border: 1px solid #ffcccc;
+    }
+
+    .payment-method strong {
+      color: #cc0000;
+      font-weight: 700;
+    }
+
+    .caption {
+      display: block;
+      text-align: right;
+      margin-top: 20px;
+      color: #555;
+      font-size: 12px;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: 1 / 1;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="content-container">
-  
-  <div class="header">
-    <div style="display:flex; align-items:center;">
-      <div class="logo">
-        <img src="images/Smash squad academy logo.jpg" alt="Smash Squad Academy Logo">
+  <div class="content-container">
+
+    <div class="header">
+      <div style="display:flex; align-items:center;">
+        <div class="logo">
+          <img src="images/Smash squad academy logo.jpg" alt="Smash Squad Academy Logo">
+        </div>
+        <div class="brand">
+          <div class="brand-title">Smash Squad Academy New</div>
+          <div class="brand-sub">Professional Coaching & Court Bookings</div>
+        </div>
       </div>
-      <div class="brand">
-        <div class="brand-title">Smash Squad Academy</div>
-        <div class="brand-sub">Professional Coaching & Court Bookings</div>
+      <button class="close-btn">✕</button>
+    </div>
+
+    <div class="contact-info">
+      <p>Call or WhatsApp: <strong>+265 991 339 144</strong> | Email: <strong>admin@smashsquad-mw.com</strong></p>
+    </div>
+
+
+    <h2>Training Packages & Pricing</h2>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Package</th>
+          <th>Details</th>
+          <th class="price-cell">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Daily Package</td>
+          <td class="package-details">
+            <ul>
+              <li>1-on-1 Coaching (1x/week for 1.5 hours)</li>
+              <li>Personalized Training Plan</li>
+              <li>Available for beginners and social players (all ages)</li>
+            </ul>
+          </td>
+          <td class="price-cell">MK 17,000 /day</td>
+        </tr>
+        <tr>
+          <td>Transformation Package</td>
+          <td class="package-details">
+            <ul>
+              <li>1-on-1 Coaching (2x/week)</li>
+              <li>Group sessions (1x/week)</li>
+              <li>Fitness & Progress Tracking</li>
+              <li>Available for beginners, intermediate, and social players (all ages)</li>
+            </ul>
+          </td>
+          <td class="price-cell">MK 45,000 /week</td>
+        </tr>
+        <tr>
+          <td>High Performance Package</td>
+          <td class="package-details">
+            <ul>
+              <li>Unlimited Coaching Sessions (4-6X/week)</li>
+              <li>Group and individual coaching</li>
+              <li>Training on singles and doubles play</li>
+              <li>Registration with South Africa HPT Club</li>
+              <li>Opportunities to travel for tournaments</li>
+              <li>Available for competitive driven players (8-18 years)</li>
+            </ul>
+          </td>
+          <td class="price-cell">MK 50,000 /week</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Add-Ons Charged Per Hour</h3>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Add-On Service</th>
+          <th class="price-cell">Price (MK)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hitting Only 1-on-1</td>
+          <td class="price-cell">MK 10,000</td>
+        </tr>
+        <tr>
+          <td>Corrective Coaching</td>
+          <td class="price-cell">MK 5,000</td>
+        </tr>
+        <tr>
+          <td>Group Training Social</td>
+          <td class="price-cell">MK 7,000</td>
+        </tr>
+        <tr>
+          <td>School Group Training (10 kids max)</td>
+          <td class="price-cell">MK 6,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="payment-method">
+      <h3>💳 Payment Method</h3>
+      <p>Bank: FDH BANK | Branch: UMOYO BRANCH | Account Number: 1850105766243</p>
+      <p><strong>⚠️ All payments strictly in advance to secure training slots ⚠️</strong></p>
+    </div>
+    <h2>Request a Booking</h2>
+    <div class="subtext">
+      Use the form below to request your preferred service, date, and coach. We will contact you shortly to confirm the
+      appointment.
+    </div>
+
+    <form action="submit_booking.php" method="POST">
+
+      <div class="full field-group">
+        <label for="full_name">Full Name *</label>
+        <input type="text" id="full_name" name="full_name" placeholder="Your full name" required>
       </div>
-    </div>
-    <button class="close-btn">✕</button>
+
+      <div class="field-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+      </div>
+      <div class="field-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+265 7xx xxx xxx" required>
+      </div>
+
+      <div class="full field-group">
+        <label for="service">Select a Service *</label>
+        <select id="service" name="service" required>
+          <option value="">-- Select a Service --</option>
+          <option value="Private Lesson">Private Lesson (1-on-1)</option>
+          <option value="Group Lesson">Group Lesson</option>
+          <option value="Court Hire">Court Hire</option>
+          <option value="Membership">Membership</option>
+          <option value="Coaching Camp">Coaching Camp</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="skill_level">Skill Level</label>
+        <select id="skill_level" name="skill_level">
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+          <option value="All Levels">All Levels</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="coach">Preferred Coach</label>
+        <select id="coach" name="coach">
+          <option value="Brenda">C.Brenda (Head Coach)</option>
+          <option value="Aaron">C.Aaron (Assistant Coach)</option>
+          <option value="Gift">C.Gift</option>
+          <option value="Tanaka">C.Tanaka</option>
+          <option value="Lusekelo">C.Lusekelo</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date" name="date">
+      </div>
+      <div class="field-group">
+        <label for="time">Preferred Time</label>
+        <input type="time" id="time" name="time">
+      </div>
+
+      <div class="full field-group">
+        <label for="message">Message (Optional)</label>
+        <textarea id="message" name="message" placeholder="Any special requests or notes..."></textarea>
+      </div>
+
+      <button type="submit" class="submit">Request Booking</button>
+    </form>
+    <div class="caption">Every click elevates your game</div>
+
   </div>
+</body>
 
-  <div class="contact-info">
-    <p>Call or WhatsApp: <strong>+265 991 339 144</strong> | Email: <strong>admin@smashsquad-mw.com</strong></p>
-  </div>
-
-
-  <h2>Training Packages & Pricing</h2>
-
-  <table class="pricing-table">
-    <thead>
-      <tr>
-        <th>Package</th>
-        <th>Details</th>
-        <th class="price-cell">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Daily Package</td>
-        <td class="package-details">
-          <ul>
-            <li>1-on-1 Coaching (1x/week for 1.5 hours)</li>
-            <li>Personalized Training Plan</li>
-            <li>Available for beginners and social players (all ages)</li>
-          </ul>
-        </td>
-        <td class="price-cell">MK 17,000 /day</td>
-      </tr>
-      <tr>
-        <td>Transformation Package</td>
-        <td class="package-details">
-          <ul>
-            <li>1-on-1 Coaching (2x/week)</li>
-            <li>Group sessions (1x/week)</li>
-            <li>Fitness & Progress Tracking</li>
-            <li>Available for beginners, intermediate, and social players (all ages)</li>
-          </ul>
-        </td>
-        <td class="price-cell">MK 45,000 /week</td>
-      </tr>
-      <tr>
-        <td>High Performance Package</td>
-        <td class="package-details">
-          <ul>
-            <li>Unlimited Coaching Sessions (4-6X/week)</li>
-            <li>Group and individual coaching</li>
-            <li>Training on singles and doubles play</li>
-            <li>Registration with South Africa HPT Club</li>
-            <li>Opportunities to travel for tournaments</li>
-            <li>Available for competitive driven players (8-18 years)</li>
-          </ul>
-        </td>
-        <td class="price-cell">MK 50,000 /week</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Add-Ons Charged Per Hour</h3>
-  <table class="pricing-table">
-    <thead>
-      <tr>
-        <th>Add-On Service</th>
-        <th class="price-cell">Price (MK)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Hitting Only 1-on-1</td>
-        <td class="price-cell">MK 10,000</td>
-      </tr>
-      <tr>
-        <td>Corrective Coaching</td>
-        <td class="price-cell">MK 5,000</td>
-      </tr>
-      <tr>
-        <td>Group Training Social</td>
-        <td class="price-cell">MK 7,000</td>
-      </tr>
-      <tr>
-        <td>School Group Training (10 kids max)</td>
-        <td class="price-cell">MK 6,000</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="payment-method">
-    <h3>💳 Payment Method</h3>
-    <p>Bank: FDH BANK | Branch: UMOYO BRANCH | Account Number: 1850105766243</p>
-    <p><strong>⚠️ All payments strictly in advance to secure training slots ⚠️</strong></p>
-  </div>
-  <h2>Request a Booking</h2>
-  <div class="subtext">
-    Use the form below to request your preferred service, date, and coach. We will contact you shortly to confirm the appointment.
-  </div>
-
-  <form action="submit_booking.php" method="POST">
-    
-    <div class="full field-group">
-      <label for="full_name">Full Name *</label>
-      <input type="text" id="full_name" name="full_name" placeholder="Your full name" required>
-    </div>
-
-    <div class="field-group">
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" placeholder="example@mail.com" required>
-    </div>
-    <div class="field-group">
-      <label for="phone">Phone Number *</label>
-      <input type="tel" id="phone" name="phone" placeholder="+265 7xx xxx xxx" required>
-    </div>
-
-    <div class="full field-group">
-      <label for="service">Select a Service *</label>
-      <select id="service" name="service" required>
-        <option value="">-- Select a Service --</option>
-        <option value="Private Lesson">Private Lesson (1-on-1)</option>
-        <option value="Group Lesson">Group Lesson</option>
-        <option value="Court Hire">Court Hire</option>
-        <option value="Membership">Membership</option>
-        <option value="Coaching Camp">Coaching Camp</option>
-      </select>
-    </div>
-
-    <div class="field-group">
-      <label for="skill_level">Skill Level</label>
-      <select id="skill_level" name="skill_level">
-        <option value="Beginner">Beginner</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Advanced">Advanced</option>
-        <option value="All Levels">All Levels</option>
-      </select>
-    </div>
-    <div class="field-group">
-      <label for="coach">Preferred Coach</label>
-      <select id="coach" name="coach">
-        <option value="Brenda">C.Brenda (Head Coach)</option>
-        <option value="Aaron">C.Aaron (Assistant Coach)</option>
-        <option value="Gift">C.Gift</option>
-        <option value="Tanaka">C.Tanaka</option>
-        <option value="Lusekelo">C.Lusekelo</option>
-      </select>
-    </div>
-
-    <div class="field-group">
-      <label for="date">Preferred Date</label>
-      <input type="date" id="date" name="date">
-    </div>
-    <div class="field-group">
-      <label for="time">Preferred Time</label>
-      <input type="time" id="time" name="time">
-    </div>
-
-    <div class="full field-group">
-      <label for="message">Message (Optional)</label>
-      <textarea id="message" name="message" placeholder="Any special requests or notes..."></textarea>
-    </div>
-
-    <button type="submit" class="submit">Request Booking</button>
-  </form>
-  <div class="caption">Every click elevates your game</div>
-
-</div> </body>
 </html>
